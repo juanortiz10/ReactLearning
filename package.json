@@ -1,7 +1,7 @@
 {
   "name": "ReactLearning",
   "version": "0.0.0",
-  "description": "ERROR: No README data found!",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "watchify src/main.jsx -v -t [ babelify --presets [ react ] ] -o public/js/main.js"
@@ -21,6 +21,5 @@
     "babel-preset-react": "~6.5.0",
     "react": "~0.14.7",
     "react-dom": "~0.14.7"
-  },
-  "devDependencies": {}
+  }
 }
