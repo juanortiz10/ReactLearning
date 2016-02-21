@@ -19097,6 +19097,12 @@ var ListManager = React.createClass({
         var divStyle = {
             marginTop: 10
         };
+
+        var headingStyle = {};
+
+        if (this.props.headingColor) {
+            headingStyle.background = this.props.headingColor;
+        }
         return React.createElement(
             'div',
             { className: 'col-sm-4', style: divStyle },
@@ -19105,7 +19111,7 @@ var ListManager = React.createClass({
                 { className: 'panel panel-primary' },
                 React.createElement(
                     'div',
-                    { className: 'panel-heading' },
+                    { style: headingStyle, className: 'panel-heading' },
                     React.createElement(
                         'h3',
                         null,
@@ -19132,9 +19138,9 @@ var ListManager = React.createClass({
                                 'Add'
                             )
                         )
-                    ),
-                    React.createElement(List, { items: this.state.items })
-                )
+                    )
+                ),
+                React.createElement(List, { items: this.state.items })
             )
         );
     }
@@ -19148,5 +19154,7 @@ var ReactDOM = require('react-dom');
 var ListManager = require('./components/ListManager.jsx');
 
 ReactDOM.render(React.createElement(ListManager, { title: 'FreshCoders' }), document.getElementById('freshcoders'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Todo' }), document.getElementById('todo'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Other', headingColor: '#b31217' }), document.getElementById('other'));
 
 },{"./components/ListManager.jsx":161,"react":157,"react-dom":1}]},{},[162]);
